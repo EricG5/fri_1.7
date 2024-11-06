@@ -53,14 +53,14 @@ message("Found nanopb of version: " ${NANOPB_VERSION})
 
 # try to find FRIClient version
 file(READ ${CMAKE_CURRENT_BINARY_DIR}/${FRIClient_SDK_NAME}/include/friClientIf.h FRI_CLIENT_IF_HEADER)
-string(REGEX MATCH "version \\{([0-9]+)\\.([0-9]+)" _ ${FRI_CLIENT_IF_HEADER})
+string(REGEX MATCH "version: ([0-9]+)\\.([0-9]+)" _ ${FRI_CLIENT_IF_HEADER})
 
 set(FRI_CLIENT_VERSION_MAJOR ${CMAKE_MATCH_1})
 set(FRI_CLIENT_VERSION_MINOR ${CMAKE_MATCH_2})
 set(FRI_CLIENT_VERSION ${FRI_CLIENT_VERSION_MAJOR}.${FRI_CLIENT_VERSION_MINOR})
 
-if (NOT FRI_CLIENT_VERSION STREQUAL "1.15")
-    message(FATAL_ERROR "Expected FRIClient version 1.15, found: " ${FRI_CLIENT_VERSION})
+if (NOT FRI_CLIENT_VERSION STREQUAL "1.7")
+    message(FATAL_ERROR "Expected FRIClient version 1.7, found: " ${FRI_CLIENT_VERSION})
 endif()
 
 message("Found FRIClient of version: " ${FRI_CLIENT_VERSION})
@@ -187,10 +187,10 @@ if (BUILD_FRI_APPS)
         )
     endfunction()
 
-    build_fri_example(IOAccess)
+    #build_fri_example(IOAccess)
     build_fri_example(LBRJointSineOverlay)
     build_fri_example(LBRTorqueSineOverlay)
     build_fri_example(LBRWrenchSineOverlay)
-    build_fri_example(SimulatedTransformationProvider)
-    build_fri_example(TransformationProvider)
+    #build_fri_example(SimulatedTransformationProvider)
+    #build_fri_example(TransformationProvider)
 endif(BUILD_FRI_APPS)
