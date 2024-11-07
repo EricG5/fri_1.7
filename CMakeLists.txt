@@ -185,6 +185,11 @@ if (BUILD_FRI_APPS)
             PRIVATE
                 FRIClient
         )
+        install(
+            TARGETS ${NAME}App
+            DESTINATION lib/${PROJECT_NAME}
+        )
+
     endfunction()
 
     #build_fri_example(IOAccess)
