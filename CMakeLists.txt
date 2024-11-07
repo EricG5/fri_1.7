@@ -187,7 +187,7 @@ if (BUILD_FRI_APPS)
         )
         install(
             TARGETS ${NAME}App
-            DESTINATION lib/${PROJECT_NAME}
+            DESTINATION lib/fri_vendor
         )
 
     endfunction()
