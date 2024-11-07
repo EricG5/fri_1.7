@@ -21,7 +21,7 @@ endif()
 # variable definitions
 ######################
 set(FRIClient_SDK_NAME "FRI-Client-SDK_Cpp")
-option(BUILD_FRI_APPS "Build FRIClient example applications" OFF)
+option(BUILD_FRI_APPS "Build FRIClient example applications" ON)
 
 #########################################
 # extract the FRIClient from the zip file
